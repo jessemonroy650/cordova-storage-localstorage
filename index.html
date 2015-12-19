@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Cordova localstorage test</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval';" /> -->
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="app.css" />
+    <style></style>
+    <script type="text/javascript">
+    // This is to keep the 'deviceready' code from firing in a webbrowser.
+    var device = {platform:'browser'};
+    function onLoad() {
+        //alert("body loaded.");
+        onDeviceReady();
+    }
+    </script>
+</head>
+<body onload="onLoad()">
+<div id=header class="button button-block button-large">
+    <img align=left src=images/favicon-48x48.png>
+    Cordova localstorage test
+    <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large">Exit</button>
+</div>
+
+<div id=alabel style="margin:1em;">available: <span id=storeavailable>content</span></div>
+<div id=storelocal style="margin:1em;">content</div>
+<div id=butts style="margin:1em;">
+    <button id=set class="button button-pill button-action button-large">set</button>
+    <button id=get class="button button-pill button-action button-large">get</button>
+</div>
+<div id=storesession style="margin:1em;">content</div>
+<div id=butts style="margin:1em;">
+    <button id=tempset class="button button-pill button-action button-large">tempset</button>
+    <button id=tempget class="button button-pill button-action button-large">tempget</button>
+</div>
+<pre id=info>pre</pre>
+
+<div class="copyright" style="padding:5px;align:left;font-style:italic;font-size:small;">
+    <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
+</div>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/fastclick.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/zepto-1.1.6.js"></script>
+<script type="text/javascript" charset="utf-8" src="buttons.js"></script>
+<script type="text/javascript" charset="utf-8" src="app.js"></script>
+<script type="text/javascript">
+    function onButtonClick() {
+        alert("button clicked.");
+    }
+    //
+    // Wait for PhoneGap to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+    //
+    function onDeviceReady() {
+        alert("device ready.");
+        if (device.platform === "iOS") {
+            alert("got iOS.");
+            // hide Exit button. They don't have one on iOS devices.
+            // http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
+            document.getElementById('exitApp').classList.add("hidden");
+            // deals with post-iOS-7 change that covers the status bar
+            // http://coenraets.org/blog/2013/09/phonegap-and-cordova-with-ios-7/
+            document.body.style.marginTop = "20px";
+            // hide the Splash Screen for iOS only
+            navigator.splashscreen.hide();
+        } else if (device.platform == 'Android') {
+            // Get rid of 300ms delay 
+            document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
+        } else if (device.platform == 'browser') {
+        }
+        mylocalstorage.test();
+    }
+</script>
+</body>
+</html>
