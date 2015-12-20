@@ -20,7 +20,7 @@ var mylocalstorage = {
     },
     test3 : function () {
         console.log("mylocalstorage.test3");
-        $('#storelocal').html( localStorage.getItem('data') );
+        $('#storelocal').html( localStorage.getItem('data') ? localStorage.getItem('data') : 'empty' );
     },
     test4 : function () {
         console.log("mylocalstorage.test4");
@@ -29,7 +29,7 @@ var mylocalstorage = {
     },
     test5 : function () {
         console.log("mylocalstorage.test5");
-        $('#storesession').html( (sessionStorage.getItem('data')) ? sessionStorage.getItem('data') : 'empty'  );
+        $('#storesession').html( (sessionStorage.getItem('data')) ? sessionStorage.getItem('data') : 'empty' );
     },
 
     // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_support_vs_availability
