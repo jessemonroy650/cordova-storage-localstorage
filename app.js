@@ -15,7 +15,7 @@ var mylocalstorage = {
         // localStorage.colorSetting = '#a4509b';
         // localStorage['colorSetting'] = '#a4509b';
         // localStorage.setItem('colorSetting', '#a4509b');
-        localStorage.data = "persistent storage";
+        localStorage.data = $('#pdata').val();
     },
     test3 : function () {
         console.log("mylocalstorage.test3");
@@ -23,11 +23,11 @@ var mylocalstorage = {
     },
     test4 : function () {
         console.log("mylocalstorage.test4");
-        sessionStorage.data = "temporary storage";
+        sessionStorage.data = $('#sdata').val();
     },
     test5 : function () {
         console.log("mylocalstorage.test5");
-        $('#storesession').html( sessionStorage.getItem('data') );
+        $('#storesession').html( (sessionStorage.getItem('data')) ? sessionStorage.getItem('data') : 'empty'  );
     },
 
     // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_support_vs_availability

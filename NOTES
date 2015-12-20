@@ -1,3 +1,7 @@
 ## NOTES ##
 Date: 2015-12-19
 
+- Persistent storage seems to be persistent. It has lasted for some time.
+- Sessions storage seems to be temporal, not session as describe in the spec. The amount of (fixed) time is unknown, but guessed to in the hours.
+
+https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
