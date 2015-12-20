@@ -16,6 +16,7 @@ var mylocalstorage = {
         // localStorage['colorSetting'] = '#a4509b';
         // localStorage.setItem('colorSetting', '#a4509b');
         localStorage.data = $('#pdata').val();
+        $('#pdata').val('');
     },
     test3 : function () {
         console.log("mylocalstorage.test3");
@@ -24,6 +25,7 @@ var mylocalstorage = {
     test4 : function () {
         console.log("mylocalstorage.test4");
         sessionStorage.data = $('#sdata').val();
+        $('#sdata').val('');
     },
     test5 : function () {
         console.log("mylocalstorage.test5");
