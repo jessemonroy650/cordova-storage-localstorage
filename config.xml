@@ -26,6 +26,6 @@
 
         <!-- 3rd PARTY PLUGINS *3rd PARTY PLUGINS -->
         <!-- popular alternative to the google chrome webview -->
-        <plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' />
+        <!-- <plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' /> -->
 
     </widget>
