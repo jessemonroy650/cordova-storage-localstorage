@@ -2,10 +2,9 @@
     Date: 2015-12-19
     https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 */
-
 var mylocalstorage = {
     //
-    test : function () {
+    test1 : function () {
         console.log("mylocalstorage.test");
         $('#storeavailable').html(mylocalstorage.storageAvailable('localStorage'));
     },
@@ -31,7 +30,6 @@ var mylocalstorage = {
         console.log("mylocalstorage.test5");
         $('#storesession').html( (sessionStorage.getItem('data')) ? sessionStorage.getItem('data') : 'empty' );
     },
-
     // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_support_vs_availability
     storageAvailable: function (type) {
         try {
@@ -45,5 +43,4 @@ var mylocalstorage = {
             return false;
         }
     }
-
 };
