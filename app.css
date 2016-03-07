@@ -4,3 +4,6 @@
     .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
     #header {margin:0;padding:0;}
     #exitApp {margin:0.1em;float:right;}
+
+#alabel, #storelocal {margin:1em;clear:both;}
+.butts, #storesession {margin:1em;}

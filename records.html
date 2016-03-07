@@ -14,31 +14,28 @@
     <button id=exitApp class="button button-pill button-primary button-large">Exit</button>
 </div>
 
-<div id=alabel>storage available: <span id=storeavailable>content</span></div>
+<div id=alabel>storage available: <span id=storeavail>content</span></div>
 <div>Persistent Storage</div>
 <div id=storelocal>persistent content</div>
+<button id=clear >clear records</button>
 <div class=butts >
-    <input id=pdata type=text placeholder="Enter persistent data" /><br>
-    <button id=set class="button button-pill button-action button-large">set</button>
-    <button id=get class="button button-pill button-action button-large">get</button>
+    <input id=label type=text placeholder="Enter label" /><br>
+    <input id=data type=text placeholder="Enter data" /><br>
+    <button id=set >set</button>
 </div>
-<div>Session Storage</div>
-<div id=storesession >session content</div>
-<div class=butts >
-    <input id=sdata type=text placeholder="Enter session data" /><br>
-    <button id=tempset class="button button-pill button-action button-large">tempset</button>
-    <button id=tempget class="button button-pill button-action button-large">tempget</button>
-</div>
+<button id=get >get records</button>
 
-<a href=records.html>Records</a>
+<div id=records></div>
+
+
 <div class="copyright" >
     <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
 </div>
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/fastclick.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/zepto-1.1.6.js"></script>
-<script type="text/javascript" charset="utf-8" src="buttons.js"></script>
-<script type="text/javascript" charset="utf-8" src="plugin.js"></script>
+<script type="text/javascript" charset="utf-8" src="localstore.js"></script>
+<script type="text/javascript" charset="utf-8" src="records.js"></script>
 <script type="text/javascript" charset="utf-8" src="app.js"></script>
 </body>
 </html>
