@@ -6,9 +6,9 @@
 var localStore = {
     //
     test : function (id) {
-        var v = this.storageAvailable('localStorage')
+        var v = this.isStorageAvailable('localStorage')
         console.log("localStore.test:" + v);
-        //document.getElementById(id).innerHTML = v;
+        if (id) { document.getElementById(id).textContent = v; }
         document.getElementById(id).textContent = v;
         return v;
     },
@@ -19,7 +19,7 @@ var localStore = {
     update  : function (obj) { this.remove(obj.id); this.put(obj.key, obj.value); },
     key     : function (num) { return localStorage.key(num); },
     remove  : function (key) { localStorage.removeItem(key); },
-    storageAvailable: function (type) {
+    isStorageAvailable: function (type) {
         try {
             var storage = window[type],
 			          x = '__storage_test__';

@@ -2,15 +2,24 @@
     Date: 2016-03-07
 
 */
+
+function triggerRedrawList() {
+    document.getElementById('get').click();
+}
+
 document.getElementById('clear').addEventListener('click', function () {
     localStore.clear();
+    triggerRedrawList();
 });
 
 
 document.getElementById('set').addEventListener('click', function () {
-    localStore.put($('#label').val(), $('#data').val());
-    $('#data').val('');
-    $('#label').val('');
+    var k = document.getElementById('label').value;
+    var v = document.getElementById('data').value;
+    // filter against blank fields
+    localStore.put(k, v);
+    document.getElementById('label').value = '';
+    document.getElementById('data').value  = '';
 });
 
 document.getElementById('get').addEventListener('click', function () {
@@ -29,11 +38,12 @@ document.getElementById('get').addEventListener('click', function () {
             k = localStore.key(i);
             v = localStore.get(localStore.key(i));
             console.log(i + ":" + k + ":" + v);
-            list += '' +
+            list += '<div id=' + k + '>' +
+'<div class="removeKey">X</div>' +
                 '<input id=_label type=text placeholder="label" value="' + k + '">' + '<br>' +
                 '<input id=_value type=text placeholder="value" value="' + v + '">' + '<br>' +
-                '<button class=removeKey>remove</button>' + '&nbsp;' +
-                '<button class=updateKey>Update</button>' + '</div>';
+                 '&nbsp;' +
+                '<button class=updateKey>update</button>' + '</div>';
         }
         // http://www.javascriptkit.com/javatutors/dom2.shtml
         // https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
@@ -42,12 +52,12 @@ document.getElementById('get').addEventListener('click', function () {
         bindClassOnEvent('removeKey', 'click', function (e) {
             removeListItem(e);
             // Redraw list by clicking the button that draws it.
-            document.getElementById('get').click();
+            triggerRedrawList();
         });
         bindClassOnEvent('updateKey', 'click', function (e) {
             updateListItem(e, {l:'#_label' , v:'#_value'});
             // Redraw list by clicking the button that draws it.
-            document.getElementById('get').click();
+            triggerRedrawList();
         });
     }
 });
@@ -55,6 +65,7 @@ document.getElementById('get').addEventListener('click', function () {
 function removeListItem (evt) {
     //console.log('.removeKey');
     var id = evt.target.parentNode.id;
+    console.log("remove:",id);
     localStore.remove(id);
 }
 

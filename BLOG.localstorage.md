@@ -1,6 +1,6 @@
 # BLOG.localstorage #
 Date: 2016-01-06 <br>
-Last Update: 2016-01-06
+Last Update: 2016-03-07
 
 A common task when working on a hybrid mobile platform is to store some data until the remote becomes available. There are four methods of storage available.
 
@@ -41,7 +41,7 @@ We run five (5) tests check the basics of the library. Only the first three (3) 
 4. test4 - for sessionStorage can we `setItem()`
 5. test5 - for sessionStorage can we `getItem()`
 
-However, it should be noted there are three (3) syntactic ways to write code to manipulate the date. 
+However, it should be noted there are three (3) syntactic ways to write code to manipulate the data.
 
 1. dot notation
 2. bracket notation (known in other languages as associative array or dictionary array)
