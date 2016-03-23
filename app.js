@@ -1,11 +1,9 @@
-    function onButtonClick() {
-        alert("button clicked.");
-    }
-    //
-    // Wait for PhoneGap to load
-    document.addEventListener("deviceready", onDeviceReady, false);
-    //
-    function onDeviceReady() {
+/*
+    Date: 2016-03-23
+*/
+//
+var app = {
+    onDeviceReady : function() {
         //alert("device ready.");
         if (device.platform === "iOS") {
             alert("got iOS.");
@@ -38,7 +36,7 @@
             localStore.test('storeavail');
         }
     }
-
+};
 
 //
 //    Entry Point
@@ -51,11 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Is it a device we know?
     if ( isCordovaApp === true ) {
         // Wait for PhoneGap to load
-        document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", app.onDeviceReady, false);
     } else {
         // This needs to be global so other modules can see it.
         device = {platform:'browser'};
         // Force the function.
-        onDeviceReady();
+        app.onDeviceReady();
     }
 });

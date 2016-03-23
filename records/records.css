@@ -1,0 +1,28 @@
+/*
+    Date: 2016-03-23
+*/
+.removeKey {
+display:inline-block;
+text-align:center;
+float:left;
+background-color:red;
+color:white;
+}
+.removeKey:hover {
+cursor:pointer;
+}
+.updateKey {
+display:inline-block;
+text-align:center;
+float:right;
+background-color:green;
+color:white;
+}
+.oneRecord {
+background-color:#888;
+border: solid 1px black;
+margin-bottom:0.1em;
+}
+.fspacer { /* this odd-ball spacer is so the buttons fill in correctly. */
+line-height:1.3em;
+}

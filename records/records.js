@@ -38,11 +38,11 @@ document.getElementById('get').addEventListener('click', function () {
             k = localStore.key(i);
             v = localStore.get(localStore.key(i));
             console.log(i + ":" + k + ":" + v);
-            list += '<div id=' + k + '>' +
-'<div class="removeKey">X</div>' +
+            list += '<div id=' + k + ' class=oneRecord>' +
                 '<input id=_label type=text placeholder="label" value="' + k + '">' + '<br>' +
                 '<input id=_value type=text placeholder="value" value="' + v + '">' + '<br>' +
-                 '&nbsp;' +
+                '<button class="removeKey">delete</button>' +
+                '<span class=fspacer>&nbsp;</span>' +
                 '<button class=updateKey>update</button>' + '</div>';
         }
         // http://www.javascriptkit.com/javatutors/dom2.shtml
