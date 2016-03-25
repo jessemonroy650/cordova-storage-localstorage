@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval';" /> -->
     <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="records/records.css" />
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
@@ -15,27 +14,31 @@
     <button id=exitApp class="button button-pill button-primary button-large">Exit</button>
 </div>
 
-<div id=alabel>storage available: <span id=storeavail>content</span></div>
-<div>Persistent Storage</div>
-<div id=storelocal>persistent content</div>
-<button id=clear >clear records</button>
-<div class="butts hidden" >
-    <input id=label type=text placeholder="Enter label" /><br>
-    <input id=data type=text placeholder="Enter data" /><br>
-    <button id=set >set</button>
+<div id=alabel>storage available: <span id=storeavail>content</span></div><div id=storelocal>persistent content</div>
+<button id=clearList >clear <b>all</b> records</button>
+
+<div style=background-color:#eeeeee;>
+<div id=theAddForm class="butts hidden" >
+    <input id=key type=text placeholder="Enter label" /><br>
+    <input id=value type=text placeholder="Enter data" /><br>
+    <button id=setItem >add</button>
 </div>
-<button id=get >get records</button>
+<button id=toggleForm>show form to add a record</button></div>
+
+<button id=getList>get all records</button>
 
 <div id=records></div>
 
 <div class="copyright" >
     <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
 </div>
+<link rel="stylesheet" href="records/records.css" />
+<script type="text/javascript" charset="utf-8" src="records/records.js"></script>
+
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/fastclick.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/zepto-1.1.6.js"></script>
 <script type="text/javascript" charset="utf-8" src="localstore.js"></script>
-<script type="text/javascript" charset="utf-8" src="records/records.js"></script>
 <script type="text/javascript" charset="utf-8" src="app.js"></script>
 </body>
 </html>

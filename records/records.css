@@ -1,6 +1,9 @@
 /*
     Date: 2016-03-23
 */
+#alabel, #storelocal {margin:0.2em;clear:both;}
+.butts, #storesession {margin:0.2em;}
+
 .removeKey {
 display:inline-block;
 text-align:center;
@@ -23,6 +26,6 @@ background-color:#888;
 border: solid 1px black;
 margin-bottom:0.1em;
 }
-.fspacer { /* this odd-ball spacer is so the buttons fill in correctly. */
-line-height:1.3em;
+.fspacer { /* this odd-ball spacer is so the buttons fill-in correctly. */
+min-height:1.3em;
 }
