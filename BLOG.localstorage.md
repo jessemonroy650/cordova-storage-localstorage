@@ -11,15 +11,15 @@ A common task when working on a hybrid mobile platform is to store some data unt
 
 NOTE: For convenience, we are using [zepto.js](http://zeptojs.com/), a jquery clone.
 
-##localstorage##
+## localstorage ##
 
 The beauty of this framework is that it is simple. There is one (1) property, five (5) [methods](https://developer.mozilla.org/en-US/docs/Web/API/Storage), and one (1) [event](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Responding_to_storage_changes_with_the_StorageEvent).
 
-###property###
+### property ###
 
 - `length` - number of Item(s) stored
 
-###methods###
+### methods ###
 
 - `getItem()` - gets an Item
 - `setItem()` - sets (or stores) an Item
@@ -27,11 +27,11 @@ The beauty of this framework is that it is simple. There is one (1) property, fi
 - `key()` - Passed an 'n', returns the name of the 'n'th key
 - `clear()` - empty all keys out of the storage
 
-###events###
+### events ###
 
 - `storage` - `window.addEventListener('storage', function(e) {});`
 
-###The Test Framework###
+### The Test Framework ###
 
 We run five (5) tests check the basics of the library. Only the first three (3) are documented as the later two are a namespace change.
 
@@ -53,7 +53,7 @@ However, it should be noted there are three (3) syntactic ways to write code to 
 2. `localStorage['data'] = 'some string';`
 3. `localStorage.setItem('data', 'some string');`
 
-####test1 - availability####
+#### test1 - availability ####
 
 The first thing to do is test for availability. [doc](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_support_vs_availability). With the code below, we are testing three (3) things.
 
@@ -74,14 +74,14 @@ If those three (3) things are available, then we return `true`, else `false.
             return false;
         }
 
-####2. test2 - `localStorage.setItem()` ####
+#### 2. test2 - `localStorage.setItem()` ####
 
 Simply enough, we get the string from the input field (`id=pdata`) and assign the string to `localStorage` with the key `data`. We then clear the input field to give an indication that we have completed the task.
 
         localStorage.data = $('#pdata').val();
         $('#pdata').val('');
 
-####3. test3 - `localStorage.getItem()`####
+#### 3. test3 - `localStorage.getItem()` ####
 
 Starting from the inside and working out, we retrieve an item stored in `localStorage` by using the function `getItem()` and giving it a key of `'data'`. We then check for the "truthiness" of what is return, if we get "something" - return "something" else return the string 'empty'.
 
